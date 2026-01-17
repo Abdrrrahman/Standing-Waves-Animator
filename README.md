@@ -13,6 +13,11 @@ This simulator demonstrates **standing wave formation** through the interference
 * Configurable wave parameters (amplitude, frequency, tension)
 * Smooth 60+ FPS rendering
 
+![gif1](attachments/standing_gif1.gif)
+
+![gif2](attachments/standing_gif2.gif)
+
+![gif3](attachments/standing_gif3.gif)
 ### Physics Background
 
 Standing waves occur when two identical waves traveling in opposite directions interfere. The simulator uses the wave equation:
