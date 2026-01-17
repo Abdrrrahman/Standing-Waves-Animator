@@ -43,7 +43,7 @@ Raylib is included and built automatically from source.
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/Standing-Waves.git
+git clone https://github.com/abdrrrahman/Standing-Waves.git
 cd Standing-Waves
 ```
 
