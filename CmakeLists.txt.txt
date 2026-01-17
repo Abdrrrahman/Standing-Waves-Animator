@@ -1,0 +1,66 @@
+cmake_minimum_required(VERSION 3.25)
+
+project(StandingWaves
+    VERSION 1.0
+    LANGUAGES C
+)
+
+# -------------------------------
+# C standard
+# -------------------------------
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
+
+# -------------------------------
+# Default build type
+# -------------------------------
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+# -------------------------------
+# Force static build
+# -------------------------------
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+
+# -------------------------------
+# raylib options (keep build small)
+# -------------------------------
+set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(BUILD_GAMES OFF CACHE BOOL "" FORCE)
+
+# -------------------------------
+# Add raylib from source
+# -------------------------------
+add_subdirectory(external/raylib)
+
+# -------------------------------
+# Your executable
+# -------------------------------
+add_executable(standing_waves
+    src/main.c
+)
+
+target_link_libraries(standing_waves PRIVATE raylib)
+
+# -------------------------------
+# Platform-specific static deps
+# -------------------------------
+if (WIN32)
+    target_link_libraries(standing_waves PRIVATE
+        winmm
+        gdi32
+        user32
+        shell32
+    )
+endif()
+
+if (UNIX AND NOT APPLE)
+    target_link_libraries(standing_waves PRIVATE
+        m
+        pthread
+        dl
+        rt
+    )
+endif()
