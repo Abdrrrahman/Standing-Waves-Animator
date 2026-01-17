@@ -15,9 +15,9 @@ This simulator demonstrates **standing wave formation** through the interference
 
 ![Image](https://github.com/user-attachments/assets/03f604bf-5f98-43e2-b3d7-0aace9691f6c)
 
-![gif](https://github.com/user-attachments/assets/e9718293-3930-4289-930f-f236b85cae1e)
+![Image](https://github.com/user-attachments/assets/a7b48df1-730c-4e69-a88a-22c2c5a9a001)
 
-![gif](./attachments/standing_gif3.gif)
+![Image](https://github.com/user-attachments/assets/8d66b4bd-499c-4b97-b1ec-24408581d70c)
 
 ### Physics Background
 
