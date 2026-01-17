@@ -1,5 +1,6 @@
 #include "raylib.h"
 #include <stdio.h>
+#include <time.h> // Not in the video but added to seed random colors
 #include <math.h>
 
 #define WIDTH 1280
@@ -32,9 +33,13 @@ struct StandingWave
 void InitString(struct String *);
 void GetInputs(struct PropagatingWave *);
 void CalculateDerives(struct StandingWave *, struct PropagatingWave *,struct String *);
+Color GetRandomColor(void); // Not in the video but added to seed random colors
 
 int main(void)
 {
+    // Not in the video 
+    // To add random seed each time the program is run
+    SetRandomSeed(time(NULL));
     struct String *p_string = &myString;
     InitString(p_string);
 
@@ -63,7 +68,7 @@ int main(void)
             int new_amp = (2 * (p_pWave->amplitude) - HEIGHT/2) * sin(p_stWave->waveNumber * currenctPoint.x);
             currenctPoint.y = (new_amp * cos(p_stWave->omega * GetTime())*amplifier) + HEIGHT/2;
             // DrawPixel(currenctPoint.x, currenctPoint.y, RED);
-            DrawLine(currenctPoint.x, currenctPoint.y, pastPoint.x, pastPoint.y, WHITE);    
+            DrawLine(currenctPoint.x, currenctPoint.y, pastPoint.x, pastPoint.y, GetRandomColor());    
             pastPoint.x = currenctPoint.x;
             pastPoint.y = currenctPoint.y;
         }
@@ -76,6 +81,8 @@ int main(void)
 
     return 0;
 }
+
+
 
 void InitString(struct String *p_string)
 {
@@ -91,7 +98,7 @@ void InitString(struct String *p_string)
 void GetInputs(struct PropagatingWave *p_pWave)
 {
     p_pWave->amplitude = 200;
-    p_pWave->num_loops = 2;
+    p_pWave->num_loops = 5;
     p_pWave->tension = 275;
 }
 
@@ -100,6 +107,17 @@ void CalculateDerives(struct StandingWave *p_stWave, struct PropagatingWave *p_p
     p_stWave->velocity = sqrt(p_pWave->tension / p_string->density);
     p_stWave->frequency = (p_pWave->num_loops / 2 * p_string->length) * p_stWave->velocity;
     p_stWave->omega = 2 * PI * p_stWave->frequency;
-    p_stWave->waveLength = 2 * p_string->length / p_pWave->num_loops;
+    p_stWave->waveLength = WIDTH/p_pWave->num_loops*2; // Realized the correct formula to do it after the video
     p_stWave->waveNumber = 2 * PI / p_stWave->waveLength;
+}
+
+// Not in the video but to add random colors
+Color GetRandomColor(void)
+{
+    return (Color){
+        GetRandomValue(0, 255),  // R
+        GetRandomValue(0, 255),  // G
+        GetRandomValue(0, 255),  // B
+        255 // Full opcacity
+    };
 }
