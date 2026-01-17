@@ -13,11 +13,11 @@ This simulator demonstrates **standing wave formation** through the interference
 * Configurable wave parameters (amplitude, frequency, tension)
 * Smooth 60+ FPS rendering
 
-![gif1](./attachments/standing_gif1.gif)
+![Image](https://github.com/user-attachments/assets/03f604bf-5f98-43e2-b3d7-0aace9691f6c)
 
-![gif2](./attachments/standing_gif2.gif)
+![gif](https://github.com/user-attachments/assets/e9718293-3930-4289-930f-f236b85cae1e)
 
-![gif3](./attachments/standing_gif3.gif)
+![gif](./attachments/standing_gif3.gif)
 
 ### Physics Background
 
