@@ -38,7 +38,7 @@ All platforms need:
 
 Raylib is included and built automatically from source.
 
-## Quick Start
+## How to Start
 
 ### Clone the Repository
 
@@ -56,7 +56,7 @@ cd Standing-Waves
   - **Visual Studio 2019+** with "Desktop development with C++" workload, OR
   - **MinGW-w64** from [winlibs.com](https://winlibs.com/)
 
-### 2️⃣ Build
+### Build
 
 **Using Visual Studio:**
 ```bash
