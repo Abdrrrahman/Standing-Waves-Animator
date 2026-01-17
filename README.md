@@ -1,4 +1,4 @@
-# Standing Waves Simulator
+# Standing Waves Animator
 
 A real-time physics simulation of standing waves written in C using raylib. This project visualizes wave interference patterns through superposition, demonstrating fundamental wave physics concepts.
 
